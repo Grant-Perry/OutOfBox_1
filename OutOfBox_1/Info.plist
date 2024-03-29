@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key> NSLocationWhenInUseUsageDescription </key>
+	<string>Necessary to determine the location for OutOfBox app</string>
+	<key>NSCoreLocationUsageDescription</key>
+	<string>Necessary to determine the location for OutOfBox app</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Necessary to determine location for OutOfBox app</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Necessary to determine location for OutOfBox app</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Necessary to determine location for OutOfBox app</string>
+	<key>Need access to read health info</key>
+	<array>
+		<string>Intent</string>
+	</array>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Need access to read health info</string>
+</dict>
+</plist>

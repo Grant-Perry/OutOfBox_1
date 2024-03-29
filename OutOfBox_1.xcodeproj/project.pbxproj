@@ -7,13 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B5884162BB70EE2007EE122 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5884152BB70EE2007EE122 /* Assets.xcassets */; };
+		9B5884192BB71BCB007EE122 /* metricsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5884182BB71BCB007EE122 /* metricsView.swift */; };
 		9BB4E1B72BB5E1A800E7C70D /* OutOfBox_1App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4E1B62BB5E1A800E7C70D /* OutOfBox_1App.swift */; };
 		9BB4E1B92BB5E1A800E7C70D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB4E1B82BB5E1A800E7C70D /* ContentView.swift */; };
-		9BB4E1BB2BB5E1A900E7C70D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB4E1BA2BB5E1A900E7C70D /* Assets.xcassets */; };
-		9BB4E1BE2BB5E1A900E7C70D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BB4E1BD2BB5E1A900E7C70D /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B5884032BB70429007EE122 /* OutOfBox_1 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = OutOfBox_1; sourceTree = "<group>"; };
+		9B5884052BB70489007EE122 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B5884072BB70C9F007EE122 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = OutOfBox_1/Info.plist; sourceTree = "<group>"; };
+		9B5884092BB70DF2007EE122 /* Dice3.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Dice3.imageset; path = OutOfBox_1/Assets.xcassets/Dice3.imageset; sourceTree = "<group>"; };
+		9B58840A2BB70DF2007EE122 /* Dice5.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Dice5.imageset; path = OutOfBox_1/Assets.xcassets/Dice5.imageset; sourceTree = "<group>"; };
+		9B58840B2BB70DF2007EE122 /* Dice4.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Dice4.imageset; path = OutOfBox_1/Assets.xcassets/Dice4.imageset; sourceTree = "<group>"; };
+		9B58840C2BB70DF2007EE122 /* Dice6.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Dice6.imageset; path = OutOfBox_1/Assets.xcassets/Dice6.imageset; sourceTree = "<group>"; };
+		9B58840D2BB70DF2007EE122 /* Dice1.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Dice1.imageset; path = OutOfBox_1/Assets.xcassets/Dice1.imageset; sourceTree = "<group>"; };
+		9B58840E2BB70DF2007EE122 /* Dice2.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Dice2.imageset; path = OutOfBox_1/Assets.xcassets/Dice2.imageset; sourceTree = "<group>"; };
+		9B5884152BB70EE2007EE122 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = OutOfBox_1/Assets.xcassets; sourceTree = "<group>"; };
+		9B5884182BB71BCB007EE122 /* metricsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = metricsView.swift; sourceTree = "<group>"; };
 		9BB4E1B32BB5E1A800E7C70D /* OutOfBox_1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OutOfBox_1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BB4E1B62BB5E1A800E7C70D /* OutOfBox_1App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutOfBox_1App.swift; sourceTree = "<group>"; };
 		9BB4E1B82BB5E1A800E7C70D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,10 +43,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B5884172BB71BAC007EE122 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9B5884182BB71BCB007EE122 /* metricsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		9BB4E1AA2BB5E1A800E7C70D = {
 			isa = PBXGroup;
 			children = (
+				9B5884172BB71BAC007EE122 /* Views */,
+				9B5884152BB70EE2007EE122 /* Assets.xcassets */,
+				9B58840D2BB70DF2007EE122 /* Dice1.imageset */,
+				9B58840E2BB70DF2007EE122 /* Dice2.imageset */,
+				9B5884092BB70DF2007EE122 /* Dice3.imageset */,
+				9B58840B2BB70DF2007EE122 /* Dice4.imageset */,
+				9B58840A2BB70DF2007EE122 /* Dice5.imageset */,
+				9B58840C2BB70DF2007EE122 /* Dice6.imageset */,
+				9B5884072BB70C9F007EE122 /* Info.plist */,
 				9BB4E1B52BB5E1A800E7C70D /* OutOfBox_1 */,
+				9B5884032BB70429007EE122 /* OutOfBox_1 */,
 				9BB4E1B42BB5E1A800E7C70D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,6 +80,7 @@
 		9BB4E1B52BB5E1A800E7C70D /* OutOfBox_1 */ = {
 			isa = PBXGroup;
 			children = (
+				9B5884052BB70489007EE122 /* Info.plist */,
 				9BB4E1B62BB5E1A800E7C70D /* OutOfBox_1App.swift */,
 				9BB4E1B82BB5E1A800E7C70D /* ContentView.swift */,
 				9BB4E1BA2BB5E1A900E7C70D /* Assets.xcassets */,
@@ -125,8 +155,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BB4E1BE2BB5E1A900E7C70D /* Preview Assets.xcassets in Resources */,
-				9BB4E1BB2BB5E1A900E7C70D /* Assets.xcassets in Resources */,
+				9B5884162BB70EE2007EE122 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,6 +168,7 @@
 			files = (
 				9BB4E1B92BB5E1A800E7C70D /* ContentView.swift in Sources */,
 				9BB4E1B72BB5E1A800E7C70D /* OutOfBox_1App.swift in Sources */,
+				9B5884192BB71BCB007EE122 /* metricsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,6 +227,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -254,6 +285,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -275,16 +307,20 @@
 				DEVELOPMENT_TEAM = KP3ZH5K2SY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
+				"INFOPLIST_FILE[sdk=*]" = "";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Need to access in order to work correctly";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.grantperry.OutOfBox-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -304,16 +340,18 @@
 				DEVELOPMENT_TEAM = KP3ZH5K2SY;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Need to access in order to work correctly";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.grantperry.OutOfBox-1";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
