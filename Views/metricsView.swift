@@ -14,12 +14,14 @@ struct MetricsView: View {
    let btnsTurned: Int
    let btnsRemaining: Int
    let screenWidth: CGFloat = UIScreen.main.bounds.width // get the screen width
-   var card1Top = Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1))
-   var card1Bot = Color(#colorLiteral(red: 0.844440043, green: 0.6348294616, blue: 0.9835032821, alpha: 1))
+   var card1Top = Color(#colorLiteral(red: 0.844440043, green: 0.6348294616, blue: 0.9835032821, alpha: 1))
+   var card1Bot = Color(#colorLiteral(red: 0.5568627715, green: 0.3529411852, blue: 0.9686274529, alpha: 1))
    var card2Top = Color(#colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1))
    var card2Bot = Color(#colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1))
    var card3Top = Color(#colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1))
-   var card3Bot = Color(#colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1))
+   var card3Bot = Color(#colorLiteral(red: 0.4392156899, green: 0.01176470611, blue: 0.1921568662, alpha: 1)) 
+   var card4Top = Color(#colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1))
+   var card4Bot = Color(#colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1))
 
    var body: some View {
 	  HStack(spacing: 20) { // Add 20 points of spacing between the two main VStacks
@@ -32,20 +34,22 @@ struct MetricsView: View {
 				  .padding(.leading, 15)
 			}
 		 }
-		 .frame(width: screenWidth * 0.40, alignment: .trailing) // Half the screen's width, right justified
+		 .frame(width: screenWidth * 0.39, alignment: .trailing) // Half the screen's width, right justified
 
 		 // Right side for the metrics bubbles
-		 VStack(alignment: .trailing, spacing: 5) {
+		 VStack(alignment: .trailing, spacing: 2) {
 			MetricBox(title: "Last\nRolled:", value: "\(totDieRolled)", topColor: card1Top, bottomColor: card1Bot)
 			MetricBox(title: "Tiles\nTurned:", value: "\(btnsTurned)", topColor: card2Top, bottomColor: card2Bot)
-			MetricBox(title: "Tiles\nLeft:", value: "\(btnsRemaining)", topColor: card3Top, bottomColor: card3Bot)
+			MetricBox(title: "Tiles\nRemain:", value: "\(btnsRemaining)", topColor: card3Top, bottomColor: card3Bot)
+			MetricBox(title: "Accuracy:", value: "\(String(format: "%.0f", Double(btnsTurned) / 12.0 * 100.0))%", topColor: card4Top, bottomColor: card4Bot)
 		 }
-		 .frame(width: screenWidth * 0.52) //  width for metrics boxes
-		 .padding(.trailing, screenWidth * 0.05) // Add some padding to push the boxes away from the text
+		 .frame(width: screenWidth * 0.53) //  width for metrics boxes
+		 .padding(.trailing, screenWidth * 0.02) // Add some padding to push the boxes away from the text
 
 		 Spacer() // Push everything to the left
 	  }
 //	  .padding(.horizontal)
+	 
 
    }
 }

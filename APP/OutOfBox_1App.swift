@@ -13,7 +13,7 @@ import SwiftUI
 struct OutOfBox_1App: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            outOfBoxView()
         }
     }
 }

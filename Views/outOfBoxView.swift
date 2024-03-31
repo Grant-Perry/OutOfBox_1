@@ -8,7 +8,7 @@
 import SwiftUI
 import HealthKit
 
-struct ContentView: View {
+struct outOfBoxView: View {
 
    @Environment(\.colorScheme) var colorScheme
    @State var showingAlert = false // Indicates if an alert is being shown
@@ -81,6 +81,9 @@ struct ContentView: View {
    let foreColor = Color.white
    let fontType = Font.footnote
 
+
+
+   
    var body: some View {
 	  VStack(spacing: 0) {
 		 VStack {
@@ -171,7 +174,7 @@ struct ContentView: View {
 				  }
 				  VStack {
 					 HStack {
-						// MARK: - Reset Button
+ // MARK: - Reset Button
 						gameResetBtn()
 					 }
 				  }
@@ -271,7 +274,7 @@ struct ContentView: View {
 					 }
 				  }
 			   }
-// MARK: - Sum of dice roll text
+// MARK: - Sum of dice rolled text circle
 			   VStack(spacing: 0) {
 				  if totDieRolled > 1 || showingAlert {
 					 if targetNumber > 1 || showingAlert {
@@ -284,7 +287,7 @@ struct ContentView: View {
 						   .background(.white)
 						   .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
 						   .opacity(colorScheme == .dark ? 0.75 : 0.45)
-						   .padding(.top, -125)
+						   .padding(.top, -35)
 						   .padding()
 						   .disabled(true)
 					 }
@@ -298,11 +301,11 @@ struct ContentView: View {
 				  MetricsView(totDieRolled: totDieRolled,
 							  btnsTurned: buttons.filter { $0 == true }.count, 
 							  btnsRemaining: numBtns - buttons.filter { $0 == true }.count)
-				  Button("Return") {
+
+				  Button("Play Again...") {
 					 showingMetricsView = false
 					 showingAlert = false
-					 resetVars()
-
+					 resetVars(fullReset: false)
 				  }
 			   }
 
@@ -320,8 +323,6 @@ struct ContentView: View {
 //			   }, message: {Text("You rolled a ") + Text("\(totDieRolled)").foregroundColor(reddish).fontWeight(.bold) + Text("\nYou pressed ") + Text("\(holdCount)").foregroundColor(reddish).fontWeight(.bold) + Text(" tiles\nand left ") + Text("\(numBtns - holdCount)").foregroundColor(reddish).fontWeight(.bold) + Text(".\n" + alertMessage)
 //			   })
  // MARK: - ROLL DICE BUTTON
-
-
 			   /* Button section...
 				combinations.forEach { combination in
 				the combination.die1 is the dice 1 # so it needs to be 1 less for the buttons[index]
@@ -352,8 +353,8 @@ struct ContentView: View {
 				  self.targetNumber = dice1Val + dice2Val
 				  self.combinations = self.generateCombinations().filter { $0.comboDie1 + $0.comboDie2 == self.targetNumber }
 				  (remainTiles, reamingBtnsAvailable) = (0, 0)
-				  // MARK: - No More Tiles Left
 
+// MARK: - No More Tiles Left
 				  let availableCombinations = combinations.filter {
 					 !buttons[$0.comboDie1 - 1] &&
 					 !buttons[$0.comboDie2 - 1]
@@ -391,44 +392,16 @@ struct ContentView: View {
 				  }
 			   }
 			   .padding()
-			   // caption is a ViewModifier for the .font.caption - <CMD> click on .caption below for more
 			   .caption(font: .title2,
 						backgroundColor: disableDiceBtn ? Color.gray : Color.blue,
 						foregroundColor: .white,
 						fontWeight: .bold)
 			   .opacity(disableDiceBtn ? 0.5 : 1)
 			   .disabled(disableDiceBtn)
-// MARK: - Winning Stats
-			   VStack(spacing: 0) {
-				  VStack {
+// MARK: -> Show Statistics
 
-					 if gamesPlayed < 0 {
-						Text("Games Played: \(gamesPlayed)  -  Winning: \(String(format: "%.1f", winPct))%")
-						   .font(.footnote)
-						   .padding()
-						   .foregroundColor(colorScheme == .dark ? backColor : .white)
-					 }
-				  }
-// MARK: -   Map section
-//				  VStack {
-//					 HStack {
-//						HStack {
-//						   Text("Map: ")
-//							  .font(.footnote)
-//							  .frame(width: 75, height: 70, alignment: .leading)
-//							  .foregroundColor(colorScheme == .dark ? backColor : reddish)
-//						}
-//						HStack {
-//						   Toggle("", isOn: $showMapTop)
-//							  .toggleStyle(SwitchToggleStyle(tint: backColor))
-//							  .frame(width: 25, height: 50, alignment: .trailing)
-//							  .padding(.all,5)
-//							  .font(.footnote)
-//						}
-//					 }
-//				  }
-			   }
 			}
+			showStats()
 		 }
 		 VStack {
 			if debug {
@@ -466,7 +439,24 @@ struct ContentView: View {
 	  //      .background(Color(.white))
    }
 
-   // MARK: - Function Calls - Bottom
+   // MARK: - Helpers
+
+   func showStats() -> VStack<VStack<(some View)?>> {
+//	  return // MARK: - Winning Stats
+	  VStack(spacing: 0) {
+		 VStack {
+			if gamesPlayed > 0 {
+			   Text("\n\n\nGames Played: \(gamesPlayed)\nOverall Winning: \(String(format: "%.1f", winPct))%")
+				  .font(.footnote)
+				  .padding()
+				  .foregroundColor(colorScheme == .dark ? .white : .white)
+
+//			   Spacer()
+			}
+		 }
+	  }
+   }
+
 
    func queryStepCount() {
 	  // the code to get the step counter
@@ -497,20 +487,23 @@ struct ContentView: View {
 
 	  return Button("Reset") {
 		 // Reset btnClear to 0 when the button is pressed
-		 resetVars()
+		 resetVars(fullReset: true)
 		 //         noTilesLeft = false
 //		 queryStepCount()
 	  }
    }
 
-   func resetVars() {
+   func resetVars(fullReset: Bool) {
 	  // called when the reset button OR Roll Dice button are pressed to do housekeeping on several variables
-	  // if user just hitting reset button, don't calculate the total games and winning %
-	  if showingAlert {
+	  if !fullReset {
 		 gamesPlayed += 1
 		 numAllGameTilesPressed += buttons.filter { $0 == true }.count
 		 winPct = (Double(numAllGameTilesPressed) / Double(numBtns)) * 100 / Double(gamesPlayed)
 		 print("Games Played: \(gamesPlayed)")
+	  } else { // reset games
+		 gamesPlayed = 0
+		 numAllGameTilesPressed = 0
+		 winPct = 0
 	  }
 
 	  rollCnt = 0 // blue circle counter
@@ -609,7 +602,7 @@ struct DiceCombination: Hashable {
 
 struct ContentView_Previews: PreviewProvider {
    static var previews: some View {
-	  ContentView()
+	  outOfBoxView()
    }
 }
 
